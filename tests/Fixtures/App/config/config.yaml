@@ -1,0 +1,12 @@
+wexample_symfony_remote_payment_stripe:
+  secret_key: sk_test_dummy
+  webhook_secret: whsec_dummy
+  methods: [card, bancontact]
+
+services:
+  test.registry:
+    alias: Wexample\SymfonyRemotePayment\Service\PaymentProviderRegistry
+    public: true
+  test.remotes:
+    alias: Wexample\PhpRemote\Class\RemoteRegistry
+    public: true

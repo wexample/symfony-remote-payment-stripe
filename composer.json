@@ -1,11 +1,48 @@
 {
   "name": "wexample/symfony-remote-payment-stripe",
-  "version": "1.0.1",
+  "description": "Stripe for symfony-remote-payment: payment intents, webhooks and balance reading",
   "type": "library",
   "license": "MIT",
+  "version": "1.0.1",
   "autoload": {
     "psr-4": {
       "Wexample\\SymfonyRemotePaymentStripe\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Wexample\\SymfonyRemotePaymentStripe\\Tests\\": "tests/"
+    }
+  },
+  "authors": [
+    {
+      "name": "weeger",
+      "email": "romain.weeger@wexample.com"
+    }
+  ],
+  "require": {
+    "php": ">=8.5",
+    "stripe/stripe-php": "^17.0 || ^18.0 || ^19.0",
+    "wexample/symfony-helpers": ">=12.0.0",
+    "wexample/symfony-remote": ">=2.0.0",
+    "wexample/symfony-remote-payment": ">=1.0.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "*",
+    "wexample/symfony-testing": ">=2.0.0"
+  },
+  "repositories": [
+    {
+      "type": "path",
+      "url": "../*",
+      "options": {
+        "symlink": true
+      }
+    }
+  ],
+  "extra": {
+    "install": {
+      "bundle_env": "all"
     }
   }
 }
