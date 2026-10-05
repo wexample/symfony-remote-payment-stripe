@@ -1,0 +1,1 @@
+`symfony-remote-payment-stripe` is Stripe for `symfony-remote-payment`: payments through PaymentIntents, signed webhooks, and the balance transactions accounting imports. It is also a remote of `symfony-remote`, so `remote:status` tells whether Stripe answers.

@@ -1,10 +1,26 @@
 # symfony-remote-payment-stripe
 
-Version: 1.0.1
+Version: 2.0.0
+
+## Configuration
+
+```yaml
+# config/packages/wexample_symfony_remote_payment_stripe.yaml
+wexample_symfony_remote_payment_stripe:
+  secret_key: '%env(default::STRIPE_SECRET_KEY)%'
+  webhook_secret: '%env(default::STRIPE_WEBHOOK_SECRET)%'   # of the endpoint /_payment/webhook/stripe
+  methods: [card, sepa_debit, bancontact]
+```
+
+Point a Stripe webhook endpoint at `/_payment/webhook/stripe` with the `payment_intent.*` events. Without a secret key the provider reads Unconfigured and refuses calls.
+
+Balance transactions are read oldest first, with their payment (PaymentIntent) when the source is a charge, so accounting matches them with the invoices paid online.
 
 ## Table of Contents
 
+- [Configuration](#configuration)
 - [Integration in the Suite](#integration-in-the-suite)
+- [Dependencies](#dependencies)
 - [Versioning & Compatibility Policy](#versioning--compatibility-policy)
 - [License](#license)
 - [About us](#about-us)
@@ -19,6 +35,14 @@ This package is part of the Wexample Suite — a collection of high-quality, mod
 The suite includes packages for configuration management, file handling, prompts, and more. Each package can be used independently or as part of the integrated suite.
 
 Visit the [Wexample Suite documentation](https://docs.wexample.com) for the complete package ecosystem.
+
+## Dependencies
+
+- php: >=8.5
+- stripe/stripe-php: ^17.0 || ^18.0 || ^19.0
+- wexample/symfony-helpers: >=13.0.0
+- wexample/symfony-remote: >=2.0.0
+- wexample/symfony-remote-payment: >=2.0.0
 
 ## Versioning & Compatibility Policy
 
