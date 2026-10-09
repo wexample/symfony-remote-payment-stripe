@@ -95,10 +95,12 @@ class StripePaymentProvider implements PaymentGatewayInterface, WebhookParserInt
 
     public function initiate(PaymentRequest $request): PaymentInitiation
     {
+        // Stripe no longer takes the methods of a payment: they are the
+        // account's, set in its dashboard, and the payment asks for them.
         $params = array_filter([
             'amount' => $request->amount,
             'currency' => strtolower($request->currencyCode),
-            'payment_method_types' => [$request->method],
+            'automatic_payment_methods' => ['enabled' => true],
             'description' => $request->description,
             'receipt_email' => $request->customerEmail,
             'metadata' => ['reference' => $request->reference] + $request->metadata,

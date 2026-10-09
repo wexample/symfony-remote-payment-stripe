@@ -47,6 +47,9 @@ class StripePaymentProviderTest extends TestCase
         $this->assertSame('pi_1_secret', $initiation->clientSecret);
         $call = $this->http->calls[0];
         $this->assertSame('eur', $call['params']['currency']);
+        $this->assertArrayNotHasKey('payment_method_types', $call['params']);
+        // Form-encoded on the wire: the boolean travels as its word.
+        $this->assertSame('true', $call['params']['automatic_payment_methods']['enabled']);
         $this->assertSame('pay-1', $call['params']['metadata']['reference']);
         $this->assertContains('Idempotency-Key: k1', $call['headers']);
     }
