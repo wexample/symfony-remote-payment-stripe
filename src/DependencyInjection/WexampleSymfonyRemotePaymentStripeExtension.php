@@ -24,6 +24,7 @@ class WexampleSymfonyRemotePaymentStripeExtension extends AbstractWexampleSymfon
                 $config['methods'],
                 $config['name'],
             ]))
+                ->setArgument('$publicKey', $config['public_key'])
                 ->setAutoconfigured(true)
                 ->setPublic(true)
         );

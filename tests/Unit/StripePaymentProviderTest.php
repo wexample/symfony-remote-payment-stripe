@@ -133,4 +133,12 @@ class StripePaymentProviderTest extends TestCase
         $this->assertTrue($provider->supports('card'));
         $this->assertFalse($provider->supports('sepa_debit'));
     }
+
+    public function testThePayerConfirmsInStripesFormDrawnWithThePublicKey(): void
+    {
+        $provider = new StripePaymentProvider('sk_test_x', publicKey: 'pk_test_x');
+
+        $this->assertSame('@WexampleSymfonyPaymentDsBundle/components/stripe-payment', $provider->getBrowserConfirmationComponent());
+        $this->assertSame(['publicKey' => 'pk_test_x'], $provider->getBrowserConfirmationOptions());
+    }
 }

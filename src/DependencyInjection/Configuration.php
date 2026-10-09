@@ -15,6 +15,7 @@ class Configuration implements ConfigurationInterface
             ->children()
                 ->scalarNode('name')->defaultValue('stripe')->info('Provider name, as payments and the remote registry show it.')->end()
                 ->scalarNode('secret_key')->defaultNull()->info('sk_live_… / sk_test_…; the remote reads Unconfigured while it is empty.')->end()
+                ->scalarNode('public_key')->defaultNull()->info('pk_live_… / pk_test_…, drawing Stripe\'s payment form in the payer\'s browser.')->end()
                 ->scalarNode('webhook_secret')->defaultNull()->info('whsec_… of the endpoint /_payment/webhook/<name>.')->end()
                 ->arrayNode('methods')
                     ->info('Stripe payment method types offered: card, sepa_debit, bancontact…')

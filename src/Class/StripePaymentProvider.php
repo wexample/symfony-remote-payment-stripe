@@ -20,15 +20,18 @@ use Wexample\SymfonyRemotePayment\Enum\ProviderPaymentStatus;
 use Wexample\SymfonyRemotePayment\Exception\InvalidWebhookException;
 use Wexample\SymfonyRemotePayment\Exception\PaymentProviderException;
 use Wexample\SymfonyRemotePayment\Interface\BalanceReaderInterface;
+use Wexample\SymfonyRemotePayment\Interface\BrowserConfirmationInterface;
 use Wexample\SymfonyRemotePayment\Interface\PaymentGatewayInterface;
 use Wexample\SymfonyRemotePayment\Interface\WebhookParserInterface;
 use Wexample\SymfonyRemotePaymentStripe\Helper\StripeHelper;
 
 /**
  * Stripe, through PaymentIntents: collects payments, reads webhooks, and reads
- * the balance transactions that accounting books (gross, fees, payouts).
+ * the balance transactions that accounting books (gross, fees, payouts). The
+ * payer confirms a payment on the application's page, in Stripe's own form
+ * (Payment Element), drawn with the public key.
  */
-class StripePaymentProvider implements PaymentGatewayInterface, WebhookParserInterface, BalanceReaderInterface, RemoteInterface
+class StripePaymentProvider implements PaymentGatewayInterface, WebhookParserInterface, BalanceReaderInterface, BrowserConfirmationInterface, RemoteInterface
 {
     private ?StripeClient $client = null;
 
@@ -41,7 +44,22 @@ class StripePaymentProvider implements PaymentGatewayInterface, WebhookParserInt
         private readonly array $methods = ['card'],
         private readonly string $name = 'stripe',
         private readonly int $webhookTolerance = 300,
+        private readonly ?string $publicKey = null,
     ) {
+    }
+
+    /**
+     * Drawn by the payment interface (symfony-payment-ds), which holds the
+     * forms of the providers it knows; this package draws nothing itself.
+     */
+    public function getBrowserConfirmationComponent(): string
+    {
+        return '@WexampleSymfonyPaymentDsBundle/components/stripe-payment';
+    }
+
+    public function getBrowserConfirmationOptions(): array
+    {
+        return ['publicKey' => $this->publicKey];
     }
 
     public function getName(): string
