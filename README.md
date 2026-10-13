@@ -1,6 +1,6 @@
 # symfony-remote-payment-stripe
 
-Version: 2.0.3
+Version: 3.0.0
 
 ## Configuration
 
@@ -40,9 +40,9 @@ Visit the [Wexample Suite documentation](https://docs.wexample.com) for the comp
 
 - php: >=8.5
 - stripe/stripe-php: ^17.0 || ^18.0 || ^19.0
-- wexample/symfony-helpers: >=15.0.0
+- wexample/symfony-helpers: >=16.0.0
 - wexample/symfony-remote: >=2.0.0
-- wexample/symfony-remote-payment: >=2.0.0
+- wexample/symfony-remote-payment: >=3.0.0
 
 ## Versioning & Compatibility Policy
 
