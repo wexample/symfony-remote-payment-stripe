@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5a4bb1a4f50095264bae62f25274d933",
+    "content-hash": "a42efbffbd3c4e1d0b7a8cffba8bec3a",
     "packages": [
         {
             "name": "doctrine/collections",
@@ -1969,28 +1969,28 @@
         },
         {
             "name": "stripe/stripe-php",
-            "version": "v19.4.1",
+            "version": "v22.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stripe/stripe-php.git",
-                "reference": "095384404587d07de2ad1154c389c4051c5ed92f"
+                "reference": "c4c1f658483e717519935222e47af224ef4a508b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/095384404587d07de2ad1154c389c4051c5ed92f",
-                "reference": "095384404587d07de2ad1154c389c4051c5ed92f",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/c4c1f658483e717519935222e47af224ef4a508b",
+                "reference": "c4c1f658483e717519935222e47af224ef4a508b",
                 "shasum": ""
             },
             "require": {
                 "ext-curl": "*",
                 "ext-json": "*",
                 "ext-mbstring": "*",
-                "php": ">=5.6.0"
+                "php": ">=7.4.0"
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "3.94.0",
                 "phpstan/phpstan": "^1.2",
-                "phpunit/phpunit": "^5.7 || ^9.0"
+                "phpunit/phpunit": "^8.0 || ^9.0"
             },
             "type": "library",
             "extra": {
@@ -1999,6 +1999,9 @@
                 }
             },
             "autoload": {
+                "files": [
+                    "lib/version_check.php"
+                ],
                 "psr-4": {
                     "Stripe\\": "lib/"
                 }
@@ -2022,9 +2025,9 @@
             ],
             "support": {
                 "issues": "https://github.com/stripe/stripe-php/issues",
-                "source": "https://github.com/stripe/stripe-php/tree/v19.4.1"
+                "source": "https://github.com/stripe/stripe-php/tree/v22.0.0"
             },
-            "time": "2026-03-06T22:53:13+00:00"
+            "time": "2026-10-01T00:43:03+00:00"
         },
         {
             "name": "symfony/cache",
@@ -5622,11 +5625,11 @@
         },
         {
             "name": "wexample/php-api",
-            "version": "5.0.2",
+            "version": "5.0.4",
             "dist": {
                 "type": "path",
                 "url": "../php-api",
-                "reference": "e20b9714b6ac4402ee68a4b2b161f4601dad86f9"
+                "reference": "bf2bd83824e7c5869ca1819b3c441e0655678f30"
             },
             "require": {
                 "guzzlehttp/guzzle": "^7.8",
@@ -5822,11 +5825,11 @@
         },
         {
             "name": "wexample/symfony-helpers",
-            "version": "15.0.2",
+            "version": "16.0.0",
             "dist": {
                 "type": "path",
                 "url": "../symfony-helpers",
-                "reference": "07911dcf8d6ac537de2c56a39eb49ebbe17889fb"
+                "reference": "4b34a0f0d0161315845534ca0d61c0c569247b8d"
             },
             "require": {
                 "doctrine/common": "^3.4",
@@ -5874,18 +5877,18 @@
         },
         {
             "name": "wexample/symfony-remote",
-            "version": "2.0.4",
+            "version": "2.0.5",
             "dist": {
                 "type": "path",
                 "url": "../symfony-remote",
-                "reference": "f49ef4a4902a5f44e1dbfb322d679c4fe05964df"
+                "reference": "ca27e60b8b5281591b31be4e3687e02c9fd19d4e"
             },
             "require": {
                 "php": ">=8.5",
                 "symfony/rate-limiter": "^7.4",
                 "wexample/php-api": ">=5.0.0",
                 "wexample/php-remote": ">=1.0.2",
-                "wexample/symfony-helpers": ">=15.0.0"
+                "wexample/symfony-helpers": ">=16.0.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "^13",
@@ -5924,15 +5927,15 @@
         },
         {
             "name": "wexample/symfony-remote-payment",
-            "version": "2.0.3",
+            "version": "3.0.0",
             "dist": {
                 "type": "path",
                 "url": "../symfony-remote-payment",
-                "reference": "9b50397ea431a9137a9a95f000061197f5e34120"
+                "reference": "df016d86be5cac09b7f1e9b2c7137af7d26576f4"
             },
             "require": {
                 "php": ">=8.5",
-                "wexample/symfony-helpers": ">=15.0.0",
+                "wexample/symfony-helpers": ">=16.0.0",
                 "wexample/symfony-remote": ">=2.0.0"
             },
             "require-dev": {
@@ -8459,6 +8462,75 @@
             "time": "2026-05-29T05:06:50+00:00"
         },
         {
+            "name": "symfony/css-selector",
+            "version": "v8.1.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/css-selector.git",
+                "reference": "08e2905152a39cf3fd1745d83f8c483e258887d9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/css-selector/zipball/08e2905152a39cf3fd1745d83f8c483e258887d9",
+                "reference": "08e2905152a39cf3fd1745d83f8c483e258887d9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.4.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\CssSelector\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Jean-François Simon",
+                    "email": "jeanfrancois.simon@sensiolabs.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Converts CSS selectors to XPath expressions",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/css-selector/tree/v8.1.6"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/nicolas-grekas",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2026-08-23T10:06:25+00:00"
+        },
+        {
             "name": "symfony/dom-crawler",
             "version": "v8.1.5",
             "source": {
@@ -9163,19 +9235,60 @@
             "time": "2025-12-08T11:19:18+00:00"
         },
         {
+            "name": "wexample/php-bpmn",
+            "version": "2.0.0",
+            "dist": {
+                "type": "path",
+                "url": "../php-bpmn",
+                "reference": "f955e0ce6c6e5185284e2f0fb5bf47a324185e55"
+            },
+            "require": {
+                "ext-dom": "*",
+                "php": ">=8.5"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^13"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Wexample\\PhpBpmn\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Wexample\\PhpBpmn\\Tests\\": "tests/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "weeger",
+                    "email": "romain.weeger@wexample.com"
+                }
+            ],
+            "description": "BPMN 2.0 in plain PHP: a typed model of processes, read from and written to XML with their diagram, built in code, validated, and walked path by path",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
             "name": "wexample/symfony-template",
-            "version": "2.0.8",
+            "version": "2.0.9",
             "dist": {
                 "type": "path",
                 "url": "../symfony-template",
-                "reference": "3839a5e2a083e8d4ef008c53de60576395a13fe7"
+                "reference": "b85d5c4b1c2546d145f72ec61dd5c17e7499521b"
             },
             "require": {
                 "ext-dom": "*",
                 "league/commonmark": "^2.4",
                 "php": ">=8.5",
                 "symfony/yaml": ">=6.2",
-                "wexample/symfony-helpers": ">=15.0.0"
+                "wexample/symfony-helpers": ">=16.0.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "^13"
@@ -9213,28 +9326,30 @@
         },
         {
             "name": "wexample/symfony-testing",
-            "version": "6.0.0",
+            "version": "7.0.0",
             "dist": {
                 "type": "path",
                 "url": "../symfony-testing",
-                "reference": "3bacee960a8acb78c8ce2f21ff219718660cfd56"
+                "reference": "b373ec0b4417f829d6a3789393688846bdbe2b37"
             },
             "require": {
                 "php": ">=8.5",
                 "symfony/browser-kit": "^7.4 || ^8.0",
+                "symfony/css-selector": "^7.4 || ^8.0",
+                "symfony/dom-crawler": "^7.4 || ^8.0",
                 "symfony/property-access": "^7.4 || ^8.0",
                 "symfony/security-bundle": "^7.4 || ^8.0",
                 "symfony/yaml": "^7.4 || ^8.0",
+                "wexample/php-bpmn": ">=2.0.0",
                 "wexample/php-date": ">=2.1.0",
-                "wexample/symfony-helpers": ">=15.0.0",
+                "wexample/symfony-helpers": ">=16.0.0",
                 "wexample/symfony-template": ">=2.0.5"
             },
             "require-dev": {
                 "doctrine/doctrine-bundle": "^2.13 || ^3.0",
                 "doctrine/orm": "^3.0",
                 "phpunit/phpunit": "^11.5 || ^12 || ^13",
-                "symfony/twig-bundle": "^7.4 || ^8.0",
-                "wexample/php-bpmn": ">=1.0.1"
+                "symfony/twig-bundle": "^7.4 || ^8.0"
             },
             "type": "library",
             "extra": {
