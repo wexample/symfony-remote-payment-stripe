@@ -10,6 +10,7 @@ use Stripe\StripeClient;
 use Stripe\Webhook;
 use Wexample\PhpRemote\Class\RemoteStatus;
 use Wexample\PhpRemote\Interface\RemoteInterface;
+use Wexample\SymfonyHelpers\Attribute\WorkerSafe;
 use Wexample\SymfonyRemotePayment\Class\BalanceMovement;
 use Wexample\SymfonyRemotePayment\Class\PaymentInitiation;
 use Wexample\SymfonyRemotePayment\Class\PaymentNotification;
@@ -24,7 +25,6 @@ use Wexample\SymfonyRemotePayment\Interface\BrowserConfirmationInterface;
 use Wexample\SymfonyRemotePayment\Interface\PaymentGatewayInterface;
 use Wexample\SymfonyRemotePayment\Interface\WebhookParserInterface;
 use Wexample\SymfonyRemotePaymentStripe\Helper\StripeHelper;
-use Wexample\SymfonyHelpers\Attribute\WorkerSafe;
 
 /**
  * Stripe, through PaymentIntents: collects payments, reads webhooks, and reads
