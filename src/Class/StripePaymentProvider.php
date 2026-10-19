@@ -24,6 +24,7 @@ use Wexample\SymfonyRemotePayment\Interface\BrowserConfirmationInterface;
 use Wexample\SymfonyRemotePayment\Interface\PaymentGatewayInterface;
 use Wexample\SymfonyRemotePayment\Interface\WebhookParserInterface;
 use Wexample\SymfonyRemotePaymentStripe\Helper\StripeHelper;
+use Wexample\SymfonyHelpers\Attribute\WorkerSafe;
 
 /**
  * Stripe, through PaymentIntents: collects payments, reads webhooks, and reads
@@ -33,6 +34,7 @@ use Wexample\SymfonyRemotePaymentStripe\Helper\StripeHelper;
  */
 class StripePaymentProvider implements PaymentGatewayInterface, WebhookParserInterface, BalanceReaderInterface, BrowserConfirmationInterface, RemoteInterface
 {
+    #[WorkerSafe('The API client, built once from the configured key.')]
     private ?StripeClient $client = null;
 
     /**
