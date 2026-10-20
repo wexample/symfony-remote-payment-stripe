@@ -1,6 +1,6 @@
 # symfony-remote-payment-stripe
 
-Version: 4.0.0
+Version: 4.0.1
 
 ## Configuration
 
@@ -38,7 +38,7 @@ The suite includes packages for configuration management, file handling, prompts
 
 - php: >=8.5
 - stripe/stripe-php: ^17.0 || ^18.0 || ^19.0 || ^20.0 || ^21.0 || ^22.0
-- wexample/symfony-helpers: >=17.0.0
+- wexample/symfony-helpers: >=18.0.0
 - wexample/symfony-remote: >=2.0.0
 - wexample/symfony-remote-payment: >=3.0.0
 
