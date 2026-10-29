@@ -1,6 +1,6 @@
 # symfony-remote-payment-stripe
 
-Version: 4.0.3
+Version: 4.0.4
 
 Stripe for symfony-remote-payment: payment intents, webhooks and balance reading
 
